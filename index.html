@@ -9,10 +9,14 @@
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: true;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: true; "
             id="scene"
             embedded
         >
+        <a-assets>
+            <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
+          </a-assets>
+
             <a-marker
                 id="animated-marker"
                 type="pattern"
@@ -23,12 +27,21 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <a-image
+
+            <a-box position="0 2 -5" rotation="0 45 45" scale="2 2 2" src="#boxTexture">
+                <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
+                  to="0 2.2 -5"></a-animation>
+                <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
+                <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
+                <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
+              </a-box>
+
+              <!--   <a-image
                     src="./assets/asset.jpeg"
                     scale="1 1 1"
                     class="clickable"
                     rotation="-90 0 0"
-                ></a-image>
+                ></a-image> -->
             </a-marker>
 
            
