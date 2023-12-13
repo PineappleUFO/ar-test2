@@ -14,8 +14,9 @@
             embedded
         >
         <a-assets>
-            <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
-          </a-assets>
+            <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/models/gltf/ferrari.glb"></a-asset-item>
+        </a-assets>
+
 
             <a-marker
                 id="animated-marker"
@@ -29,10 +30,10 @@
             >
 
             <a-entity
-            gltf-model="https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-            scale="5 5 5"
-            position="50 150 0"
-          ></a-entity>
+            gltf-model="#animated-asset"
+            rotation="0 -90 0"
+            scale="0.5 0.5 0.5">
+        </a-entity>
 
               <!--   <a-image
                     src="./assets/asset.jpeg"
